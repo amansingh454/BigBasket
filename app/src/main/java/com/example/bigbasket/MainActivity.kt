@@ -7,6 +7,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -15,6 +16,8 @@ class MainActivity : AppCompatActivity(),AdapterView.OnItemSelectedListener {
     var items = arrayOf<String?>("item1", "item2", "item3", "item4")
 
     private lateinit var recyclerView: RecyclerView
+    private lateinit var viewModel: MainViewModel
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,27 +35,12 @@ class MainActivity : AppCompatActivity(),AdapterView.OnItemSelectedListener {
 
         ///data preparation
 
-        val foodPacket:MutableList<FoodPacket> = mutableListOf()
 
-        foodPacket.add(FoodPacket("Abc","sabina","Medium",3,100,
-                50,1234,1234,2, R.drawable.food_packet,"superb"))
-        foodPacket.add(FoodPacket("Abc","sabina","Medium",3,100,
-                50,1234,1234,2, R.drawable.food_packet,"superb"))
-        foodPacket.add(FoodPacket("Abc","sabina","Medium",3,100,
-                50,1234,1234,2, R.drawable.food_packet,"superb"))
-        foodPacket.add(FoodPacket("Abc","sabina","Medium",3,100,
-                50,1234,1234,2, R.drawable.food_packet,"superb"))
-
-        foodPacket.add(FoodPacket("Abc","sabina","Medium",3,100,
-                50,1234,1234,2, R.drawable.food_packet,"superb"))
-        foodPacket.add(FoodPacket("Abc","sabina","Medium",3,100,
-                50,1234,1234,2, R.drawable.food_packet,"superb"))
-
-        foodPacket.add(FoodPacket("Abc","sabina","Medium",3,100,
-                50,1234,1234,2, R.drawable.food_packet,"superb"))
-
+        viewModel= ViewModelProvider(this).get(viewModel::class.java)
         recyclerView=findViewById(R.id.recview)
         recyclerView.layoutManager=LinearLayoutManager(this)
+        val foodPacket=viewModel.data()
+
         recyclerView.adapter=Adapter(foodPacket)
 
 

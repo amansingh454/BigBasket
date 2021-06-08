@@ -19,7 +19,7 @@ interface FoodApi {
 
         fun getInstance(): FoodApi {
             if(foodApi ==null){
-                val retrofit=Retrofit.Builder().baseUrl("https://private-703c5b-foodpacket.apiary-mock.com/questions/")
+                val retrofit=Retrofit.Builder().baseUrl("https://private-c55636-bigbasket.apiary-mock.com/questions/")
                         .addConverterFactory(GsonConverterFactory.create())
                         .build()
                 foodApi =retrofit.create(FoodApi::class.java)

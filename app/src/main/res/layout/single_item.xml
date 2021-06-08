@@ -18,14 +18,13 @@
             android:id="@+id/image"
             android:layout_width="184dp"
             android:layout_height="222dp"
-            android:src="@drawable/food_packet2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.054"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.063"
-            android:contentDescription="@string/todo" />
+            android:contentDescription="@string/foodPacket"/>
 
         <TextView
             android:id="@+id/textView"

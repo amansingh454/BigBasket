@@ -12,8 +12,8 @@ import kotlinx.coroutines.launch
 class MainViewModel(private val repository: MainRepository) : ViewModel() {
 
     private val mResponse= MutableLiveData<List<FoodPacket>>()
-
     val response = mResponse as LiveData<List<FoodPacket>>
+
     fun getFood(){
 
         viewModelScope.launch {

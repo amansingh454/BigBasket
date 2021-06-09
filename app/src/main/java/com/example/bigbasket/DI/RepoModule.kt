@@ -5,5 +5,5 @@ import org.koin.dsl.module
 
 
 val RepoModule= module {
-    single { MainRepository(api = get()) }
+    single { MainRepository(get()) }
 }

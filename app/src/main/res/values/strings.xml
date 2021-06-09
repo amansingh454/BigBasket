@@ -15,4 +15,17 @@
 
     <string name="todo">TODO</string>
     <string name="foodPacket">foodPacket</string>
+
+    <string-array name="PriceRate">
+        <item>xyz</item>
+        <item>xyzs</item>
+        <item>xyz</item>
+        <item>xyz</item>
+        <item>xyz</item>
+        <item>xyz</item>
+        <item>xyz</item>
+        <item>xyz</item>
+    </string-array>
+
+
 </resources>

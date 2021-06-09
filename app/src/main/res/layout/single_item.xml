@@ -16,15 +16,15 @@
 
         <ImageView
             android:id="@+id/image"
-            android:layout_width="184dp"
-            android:layout_height="222dp"
+            android:layout_width="143dp"
+            android:layout_height="189dp"
+            android:contentDescription="@string/foodPacket"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.054"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.063"
-            android:contentDescription="@string/foodPacket"/>
+            app:layout_constraintVertical_bias="0.063" />
 
         <TextView
             android:id="@+id/textView"
@@ -59,7 +59,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/tapered_box1"
             android:text="@{product.discountPercent}"
@@ -106,7 +105,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="9dp"
             android:layout_marginEnd="108dp"
-            android:layout_marginRight="108dp"
             android:text="@{product.size}"
             android:textColor="#040000"
             android:textSize="18sp"
@@ -123,7 +121,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="40dp"
-            android:layout_marginRight="40dp"
             android:background="#AEABAB"
             android:text="@{product.desc}"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -138,7 +135,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
-            android:layout_marginRight="32dp"
             android:background="@drawable/strike_through"
             android:text="@{product.markedPrice}"
             android:textColor="#040101"
@@ -183,7 +179,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="152dp"
-            android:layout_marginRight="152dp"
             android:background="@drawable/tapered_box"
             android:text="@{product.star}"
             android:textSize="16sp"

@@ -1,37 +1,39 @@
 package com.example.bigbasket.data.Repository
 
-import androidx.lifecycle.MutableLiveData
+
 import com.example.bigbasket.data.Network.FoodApi
 import com.example.bigbasket.data.model.FoodPacket
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 
-class MainRepository(private val api: FoodApi){
+class MainRepository(private val api: FoodApi) {
 
 
-   fun getFood():MutableLiveData<List<FoodPacket>> {
+    suspend fun getFood():List<FoodPacket> {
+        return withContext(Dispatchers.IO){
+            api.getAllFood()
 
-       val foodPacket=MutableLiveData<List<FoodPacket>>()
-       val error=MutableLiveData<String>()
-       val response=api.getAllFood()
-       response.enqueue(object :Callback<List<FoodPacket>>{
-           override fun onFailure(call: Call<List<FoodPacket>>, t: Throwable) {
-               error.value=t.message
+    }
+}}
+       //val foodPacket=MutableLiveData<List<FoodPacket>>()
+       //val error=MutableLiveData<String>()
 
-           }
+//       response.enqueue(object :Callback<List<FoodPacket>>{
+//           override fun onFailure(call: Call<List<FoodPacket>>, t: Throwable) {
+//               error.value=t.message
+//
+//           }
+//
+//           override fun onResponse(call: Call<List<FoodPacket>>, response: Response<List<FoodPacket>>) {
+//             foodPacket.value=response.body()
+//           }
+//       })
+//       return foodPacket
 
-           override fun onResponse(call: Call<List<FoodPacket>>, response: Response<List<FoodPacket>>) {
-             foodPacket.value=response.body()
-           }
-       })
-       return foodPacket
 
 
 
-       }
-   }
 
 
 

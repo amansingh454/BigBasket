@@ -1,16 +1,13 @@
 package com.example.bigbasket.data.model
-
-import android.widget.ImageView
-import com.bumptech.glide.Glide
 import com.google.gson.annotations.SerializedName
 
 data class FoodPacket(
         @SerializedName("discount")
-        val discountPercent: Int= 0,
+        val discountPercent: Int,
         @SerializedName("quantity")
-        val weight: Int=0,
+        val weight: Int,
         @SerializedName("description")
-        val desc: String="",
+        val desc: String,
         val companyName: String,
         val productName:String,
         val size:String,
@@ -19,6 +16,6 @@ data class FoodPacket(
         val ratings:Int,
         val markedPrice:Int,
         @SerializedName("Img")
-        val image:String="", )
+        val image:String )
 
 

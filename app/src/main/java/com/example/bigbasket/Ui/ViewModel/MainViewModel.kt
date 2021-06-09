@@ -11,15 +11,14 @@ import kotlinx.coroutines.launch
 
 class MainViewModel(private val repository: MainRepository) : ViewModel() {
 
-    val response: LiveData<List<FoodPacket>> =  MutableLiveData()
+    private val mResponse= MutableLiveData<List<FoodPacket>>()
 
+    val response = mResponse as LiveData<List<FoodPacket>>
     fun getFood(){
 
         viewModelScope.launch {
 
-            response as MutableLiveData
-            response.value=repository.getFood()
-
+            mResponse.value=repository.getFood()
         }
 
     }

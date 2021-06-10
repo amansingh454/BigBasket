@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -16,9 +17,9 @@ import com.example.bigbasket.Ui.Adapter.Adapter
 import com.example.bigbasket.R
 import com.example.bigbasket.R.array.PriceRate
 import com.example.bigbasket.Ui.ViewModel.MainViewModel
+import com.example.bigbasket.data.model.FoodPacket
 import com.example.bigbasket.databinding.ActivityMainBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
-
 
 
 class MainActivity : AppCompatActivity(),AdapterView.OnItemSelectedListener {
@@ -39,13 +40,17 @@ class MainActivity : AppCompatActivity(),AdapterView.OnItemSelectedListener {
 
 
     }
+
     private fun displayUi(binding: ActivityMainBinding) {
 
         recyclerView=binding.recView
         viewModel.getFood()
-        val food=viewModel.response
 
-        food.observe(this, Observer { food -> binding.recView.also {
+        val food: LiveData<List<FoodPacket>> = viewModel.response
+
+        food.observe(this, Observer {
+
+            food -> binding.recView.also {
             it.layoutManager = LinearLayoutManager(this)
             it.adapter=Adapter(food)
 

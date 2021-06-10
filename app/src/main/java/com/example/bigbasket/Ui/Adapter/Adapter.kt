@@ -19,7 +19,7 @@ class Adapter(private val data:List<FoodPacket>): RecyclerView.Adapter<Adapter.I
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.singleItemBinding.product=data [position]
-        Glide.with(holder.singleItemBinding.root).load(imageBaseUrl).into(holder.singleItemBinding.image)
+        //Glide.with(holder.singleItemBinding.root).load(imageBaseUrl).into(holder.singleItemBinding.image)
 
 
     }

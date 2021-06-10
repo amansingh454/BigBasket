@@ -16,6 +16,7 @@
 
         <ImageView
             android:id="@+id/image"
+            image="@{product.image}"
             android:layout_width="143dp"
             android:layout_height="189dp"
             android:contentDescription="@string/foodPacket"

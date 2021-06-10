@@ -1,7 +1,7 @@
 package com.example.bigbasket
 
 import android.app.Application
-import com.example.bigbasket.DI.ApiModule
+import com.example.bigbasket.DI.ApiHelperModule
 import com.example.bigbasket.DI.RepoModule
 import com.example.bigbasket.DI.ViewModelModule
 import org.koin.android.ext.koin.androidContext
@@ -12,7 +12,7 @@ class App : Application() {
         super.onCreate()
         startKoin {
             androidContext(this@App)
-            modules(listOf(ApiModule, RepoModule, ViewModelModule))
+            modules(listOf(ApiHelperModule, RepoModule, ViewModelModule))
         }
     }}
 

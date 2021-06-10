@@ -12,7 +12,7 @@ class MainRepository(private val apiHelper: ApiHelper) {
 
     suspend fun getFood():List<FoodPacket> {
         return withContext(Dispatchers.IO){
-            apiHelper.getAllFood()
+            apiHelper.getFood()[0].choices
 
     }
 }}

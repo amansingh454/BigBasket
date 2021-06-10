@@ -5,7 +5,7 @@ data class FoodPacket(
         @SerializedName("discount")
         val discountPercent: Int,
         @SerializedName("quantity")
-        val weight: Int,
+        val weight: String,
         @SerializedName("description")
         val desc: String,
         val companyName: String,

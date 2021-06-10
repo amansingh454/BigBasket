@@ -3,7 +3,7 @@ import com.google.gson.annotations.SerializedName
 
 data class FoodPacket(
         @SerializedName("discount")
-        val discountPercent: Int,
+        val discountPercent: String,
         @SerializedName("quantity")
         val weight: String,
         @SerializedName("description")
@@ -11,10 +11,10 @@ data class FoodPacket(
         val companyName: String,
         val productName:String,
         val size:String,
-        val star:Int,
-        val retailPrice:Int,
-        val ratings:Int,
-        val markedPrice:Int,
+        val star:String,
+        val retailPrice:String,
+        val ratings:String,
+        val markedPrice:String,
         @SerializedName("Img")
         val image:String )
 

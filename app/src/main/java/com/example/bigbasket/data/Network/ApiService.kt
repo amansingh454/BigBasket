@@ -14,7 +14,7 @@ interface ApiService {
     companion object{
 
         fun getRetrofit():ApiService {
-            return Retrofit.Builder().baseUrl("https://private-c55636-bigbasket.apiary-mock.com")
+            return Retrofit.Builder().baseUrl("https://private-c55636-bigbasket.apiary-mock.com/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build().create(ApiService::class.java)
         }

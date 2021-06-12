@@ -17,11 +17,7 @@ class Adapter(private val data:List<FoodPacket>): RecyclerView.Adapter<Adapter.I
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        holder.singleItemBinding.product=data [position]
-
-
-
-
+        holder.bind(data[position])
 
     }
 
@@ -30,5 +26,9 @@ class Adapter(private val data:List<FoodPacket>): RecyclerView.Adapter<Adapter.I
     }
     inner class ItemViewHolder(val singleItemBinding: SingleItemBinding):
             RecyclerView.ViewHolder(singleItemBinding.root){
+                fun bind(foodPacket:FoodPacket){
+                    singleItemBinding.product=foodPacket
+                }
+
     }
 }
